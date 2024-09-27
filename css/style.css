@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #fe5d37;
+    --primary: #1c9a78;
     --light: #FFF5F3;
     --dark: #103741;
 }
@@ -28,6 +28,45 @@
     opacity: 1;
 }
 
+.owl-carousel .owl-carousel-item h1 {
+    font-size: 6rem;
+}
+
+.hero {
+    background-color: #e4fff8;
+}
+
+.hero .owl-nav {
+    display: none;
+}
+
+#fact-container .owl-nav {
+    display: none;
+}
+
+.partner-container h5 {
+    border-left: 4px solid var(--primary);
+    padding-left: 0.5rem;
+}
+/* Mobile adjustments */
+@media (max-width: 1062px) {
+    .owl-carousel .owl-carousel-item h1 {
+        font-size: 4rem; /* Adjust fon  t size for tablets and small screens */
+    }
+}
+
+.about-us-container {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    /* font-style: italic; */
+}
+
+.about-us-container .heading {
+    /* font-family: "Playfair Display", serif; */
+    font-weight: 800;
+    /* font-style: normal; */
+}
 
 /*** Button ***/
 .btn {

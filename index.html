@@ -38,18 +38,34 @@
 <body>
     <div class="container-xxl bg-white p-0">
         <!-- Navbar Start -->
-        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-2 px-lg-5 py-lg-0">
             <a href="index.html" class="navbar-brand">
                 <h4 class="m-0 text-primary">
-                    <img src="img/logo1.png" alt="logo" height="50"/>
+                    <img src="img/logo.png" alt="logo" height="50"/>
                 </h4>
             </a>
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
+            <button 
+                type="button" 
+                class="navbar-toggler" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarCollapse"
+                style="border:none; color: white;"
+            >
+                <span class="navbar-toggler-icon" style="color: red;"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
                     <a href="about.html" class="nav-item nav-link">Our Work</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">What We Do</a>
+                        <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
+                            <a href="tutoring.html" class="dropdown-item">Tutoring and Mentorship</a>
+                            <a href="afterschool.html" class="dropdown-item">After-School Programs</a>
+                            <a href="infrastructure.html" class="dropdown-item">Infrastructure Improvement</a>
+                            <a href="scholorship.html" class="dropdown-item">Scholarships and Financial Aid </a>
+                            <a href="community.html" class="dropdown-item">Community Engagement</a>
+                        </div>
+                    </div>
                     <a href="contact.html" class="nav-item nav-link">Contact Us</a>
                     <a href="partners.html" class="nav-item nav-link">Our Partners</a>
                 </div>
@@ -74,7 +90,7 @@
                                         </span></br>    
                                          for young minds to thrive in life!
                                     </h1>
-                                    <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Contribute Us</a>
+                                    <a href="donate.html" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Contribute Us</a>
                                 </div>
                             </div>
                         </div>
@@ -92,8 +108,8 @@
                                         </span></br>
                                         to shape a brighter tomorrow!
                                     </h1>
-                                    <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Contribute Us</a>
-                                    <!-- <a href="" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Our Classes</a> -->
+                                    <a href="donate.html" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Contribute Us</a>
+
                                 </div>
                             </div>
                         </div>
@@ -165,119 +181,94 @@
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="facility-item">
-                            <div class="facility-icon bg-primary">
-                                <img src="/img/mentorship.png" alt="mentorship" style="z-index: 999;"/>
-                                <!-- <i class="bi bi-lightning fa-3x text-primary"></i> -->
+                        <a href="tutoring.html">
+                            <div class="facility-item">
+                                <div class="facility-icon bg-primary">
+                                    <img src="/img/mentorship.png" alt="mentorship" style="z-index: 999;"/>
+                                </div>
+                                
+                                <div class="facility-text">
+                                    <h3 class="text-primary mb-3">Tutoring and Mentorship</h3>
+                                    <p class="mb-0">
+                                        Connecting students with mentors and tutors who can provide guidance, support, and academic assistance.
+                                    </p>
+                                </div>
                             </div>
-                            
-                            <div class="facility-text">
-                                <h3 class="text-primary mb-3">Tutoring and Mentorship</h3>
-                                <p class="mb-0">
-                                    Connecting students with mentors and tutors who can provide guidance, support, and academic assistance.
-                                </p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="facility-item">
-                            <div class="facility-icon bg-primary">
-                                <img src="/img/back-to-school.png" alt="mentorship" style="z-index: 999;"/>
+                        <a href="afterschool.html">
+                            <div class="facility-item">
+                                <div class="facility-icon bg-primary">
+                                    <img src="/img/back-to-school.png" alt="mentorship" style="z-index: 999;"/>
+                                </div>
+                                <div class="facility-text">
+                                    <h3 class="text-primary mb-3">After-School Programs</h3>
+                                    <p class="mb-0">
+                                        Creating safe and engaging environments for children to learn and grow outside of regular school hours,
+                                        focusing on both academic and personal development.
+                                    </p>
                             </div>
-                            <div class="facility-text">
-                                <h3 class="text-primary mb-3">After-School Programs</h3>
-                                <p class="mb-0">
-                                    Creating safe and engaging environments for children to learn and grow outside of regular school hours,
-                                    focusing on both academic and personal development.
-                                </p>
-                         </div>
-                        </div>
+                            </div>
+                        </a>
                     </div>
                     <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="facility-item">
-                            <div class="facility-icon bg-primary">
-                                <img src="/img/construction.png" alt="mentorship" style="z-index: 999;"/>
+                        <a href="infrastructure.html">
+                            <div class="facility-item">
+                                <div class="facility-icon bg-primary">
+                                    <img src="/img/construction.png" alt="mentorship" style="z-index: 999;"/>
+                                </div>
+                                <div class="facility-text">
+                                    <h3 class="text-primary mb-3">Infrastructure Improvement</h3>
+                                    <p class="mb-0">
+                                        Working to improve school facilities and resources, ensuring children 
+                                        have access to a conducive learning environment.
+                                    </p>
+                                </div>
                             </div>
-                            <div class="facility-text">
-                                <h3 class="text-primary mb-3">Infrastructure Improvement</h3>
-                                <p class="mb-0">
-                                    Working to improve school facilities and resources, ensuring children 
-                                    have access to a conducive learning environment.
-                                </p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="facility-item">
-                            <div class="facility-icon bg-primary">
-                                <img src="/img/scholarship.png" alt="mentorship" style="z-index: 999;"/>
+                        <a href="scholorship.html">
+                            <div class="facility-item">
+                                <div class="facility-icon bg-primary">
+                                    <img src="/img/scholarship.png" alt="mentorship" style="z-index: 999;"/>
+                                </div>
+                                <div class="facility-text">
+                                    <h3 class="text-primary mb-3"> Scholarships and Financial Aid</h3>
+                                    <p class="mb-0">
+                                        Offering financial assistance to help children from low-income families afford school 
+                                        tuition, books, and supplies.
+                                    </p>
+                                </div>
                             </div>
-                            <div class="facility-text">
-                                <h3 class="text-primary mb-3"> Scholarships and Financial Aid</h3>
-                                <p class="mb-0">
-                                    Offering financial assistance to help children from low-income families afford school 
-                                    tuition, books, and supplies.
-                                </p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="facility-item">
-                            <div class="facility-icon bg-primary">
-                                <img src="/img/handshake.png" alt="mentorship" style="z-index: 999;"/>
+                        <a href="community.html">
+                            <div class="facility-item">
+                                <div class="facility-icon bg-primary">
+                                    <img src="/img/handshake.png" alt="mentorship" style="z-index: 999;"/>
+                                </div>
+                                <div class="facility-text">
+                                    <h3 class="text-primary mb-3">Community Engagement</h3>
+                                    <p class="mb-0">
+                                        Involving families and communities in educational initiatives to 
+                                        foster a supportive atmosphere for children's learning.
+                                    </p>
                             </div>
-                            <div class="facility-text">
-                                <h3 class="text-primary mb-3">Community Engagement</h3>
-                                <p class="mb-0">
-                                    Involving families and communities in educational initiatives to 
-                                    foster a supportive atmosphere for children's learning.
-                                </p>
-                         </div>
-                        </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Facilities End -->
 
-        
-        <!-- Testimonial Start -->
-        <div class="container-xxl py-5">
-            <div id="fact-container" class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                    <h1 class="mb-3">Sneak Peak On Education In Nepal</h1>
-                </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="testimonial-item rounded p-5" style="background-color: #e4fff8;">
-                        <p class="fs-5">
-                            Between the ages of 11 and 16, there is a massive school dropout rate,
-                             with many children leaving education prematurely. There are
-                              more than 770,000 out-of-school children aged 5 to 18.
-                        </p>
-                    </div>
-                    <div class="testimonial-item rounded p-5" style="background-color: #e4fff8;">
-                        <p class="fs-5">
-                            31% percent of girls are engaged in child labour, 
-                            compared to 19% of boys. Access to education decreases when girls come from 
-                            low castes or disadvantaged ethnic groups.
-                        </p>
-                    </div>
-                    <div class="testimonial-item rounded p-5" style="background-color: #e4fff8;">
-                        <p class="fs-5">
-                            Less than 10% of children from the lowest Dalit caste will complete their 
-                            schooling because they have to help their families with farming work, or
-                             have to walk long distances to attend classes.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
-
-        <!-- Call To Action Start -->
-        <div class="container-xxl py-5">
+          <!-- Call To Action Start -->
+          <div class="container-xxl py-5">
             <div class="container">
                 <div class="bg-light rounded">
                     <div class="row g-0">
@@ -290,7 +281,7 @@
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
                                 <h1 class="mb-4">Want to make an impact?</h1>
                                 <p class="mb-4">
-                                    By becoming a donor, you can make a direct and lasting impact on the lives 
+                                    By becoming a partner, you can make a direct and lasting impact on the lives 
                                     of children in Nepal. Your contribution helps fund school fees, provide essential
                                     learning materials, and support underprivileged children in gaining access to
                                     quality education. 
@@ -304,28 +295,71 @@
         </div>
         <!-- Call To Action End -->
 
+        <!-- Testimonial Start -->
+        <div class="container-xxl py-5">
+            <div id="fact-container" class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <h1 class="mb-3">Education In Nepal</h1>
+                    <p>
+                        The facts dipicting the challenges and barriers faced by underprivileged children in 
+                        accessing education in Nepal.
+                    </p>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="testimonial-item rounded p-5" style="background: linear-gradient(to top, #ffff, #1c9a78cc);">
+                        <p class="fs-6">
+                            Between the ages of 11 and 16, there is a massive school dropout rate,
+                             with many children leaving education prematurely. There are
+                              more than 770,000 out-of-school children aged 5 to 18.
+                        </p>
+                    </div>
+                    <div class="testimonial-item rounded p-5" style="background: linear-gradient(to top, #ffff, #1c9a78cc);">
+                        <p class="fs-6">
+                            31% percent of girls are engaged in child labour, 
+                            compared to 19% of boys. Access to education decreases when girls come from 
+                            low castes or disadvantaged ethnic groups.
+                        </p>
+                    </div>
+                    <div class="testimonial-item rounded p-5" style="background: linear-gradient(to top, #ffff, #1c9a78cc);">
+                        <p class="fs-6">
+                            Less than 10% of children from the lowest Dalit caste will complete their 
+                            schooling because they have to help their families with farming work, or
+                             have to walk long distances to attend classes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+
+      
+
         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-3">
                 <div class="row g-5">
                     <div class="col-lg-6">
-                        <!-- <h3 class="text-white mb-4">Get In Touch</h3> -->
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Surkhet, Nepal</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                        <div class="d-flex pt-2 gap-3">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
                         <div>
-                            <img src="img/footer_image_.png" alt="logo" height="50"/>
+                            <img src="img/logo.png" alt="logo" height="50"/>
                         </div>
-                        <div class="mt-3">
+                        <!-- <div class="mt-3">
                             <a class="btn btn-link text-white-50" href="">About Us</a>
                             <a class="btn btn-link text-white-50" href="">Contact Us</a>
                             <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
                             <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                        </div> -->
+                    </div>
+                    <div class="col-lg-6">
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Surkhet, Nepal</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@raisinghandsfoundation.org</p>
+                        <div class="d-flex pt-2 gap-3">
+                            <a 
+                                class="btn btn-outline-light btn-social" 
+                                href="https://www.facebook.com/share/K5q1YPWjXCrRW7m8/?mibextid=LQQJ4d" 
+                                target="_blank"
+                            >
+                                <i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
                 </div>
@@ -333,11 +367,11 @@
             <div class="container">
                 <div class="copyright pt-3 pb-3">
                     <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Helping Hnads, Nepal</a>. All Right Reserved.
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0" style="font-size: 12px;">
+                            © Raising Hands Foundation, Nepal</a>. All Right Reserved.
                         </div>
                         <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
+                            <div class="footer-menu" style="font-size: 12px;">
                                 <a href="">Cookies</a>
                                 | <a href="">Help</a>
                                 | <a href="">FQAs</a>

@@ -33,25 +33,40 @@
 
 <body>
     <div class="container-xxl bg-white p-0">
-        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-2 px-lg-5 py-lg-0">
             <a href="index.html" class="navbar-brand">
                 <h4 class="m-0 text-primary">
-                    <img src="img/logo1.png" alt="logo" height="50"/>
+                    <img src="img/logo.png" alt="logo" height="50"/>
                 </h4>
             </a>
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
+            <button 
+                type="button" 
+                class="navbar-toggler" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarCollapse"
+                style="border:none; color: white;"
+            >
+                <span class="navbar-toggler-icon" style="color: red;"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
                     <a href="about.html" class="nav-item nav-link active">Our Work</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">What We Do</a>
+                        <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
+                            <a href="tutoring.html" class="dropdown-item">Tutoring and Mentorship</a>
+                            <a href="afterschool.html" class="dropdown-item">After-School Programs</a>
+                            <a href="infrastructure.html" class="dropdown-item">Infrastructure Improvement</a>
+                            <a href="scholorship.html" class="dropdown-item">Scholarships and Financial Aid </a>
+                            <a href="community.html" class="dropdown-item">Community Engagement</a>
+                        </div>
+                    </div>
                     <a href="contact.html" class="nav-item nav-link">Contact Us</a>
                     <a href="partners.html" class="nav-item nav-link">Our Partners</a>
                 </div>
                 <a href="donate.html" class="btn btn-primary px-3">Join Hands<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
-
 
         <!-- Page Header End -->
         <div class="container-xxl py-5 page-header position-relative mb-5">
@@ -109,7 +124,7 @@
                         <div class="row">
                             <div class="col-12 text-center">
                                 <img 
-                                    class="img-fluid w-75 p-3 rounded" 
+                                    class="img-fluid w-75 p-3" 
                                     src="img/kid_in_nepal_2.png" 
                                     alt="" 
                                     style="border: 1px solid #1c9a78; padding: 8px"
@@ -140,22 +155,22 @@
 
 
        
-        <!-- Facilities Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">Our Key Initiatives </h1>
-                    <p>
-                        the Raising Hands Foundation aims to break the cycle of poverty and empower children to achieve
-                         their full potential, ultimately contributing to healthier, more educated communities.
-                    </p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+  <!-- Facilities Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="mb-3">Our Key Initiatives </h1>
+                <p>
+                    the Raising Hands Foundation aims to break the cycle of poverty and empower children to achieve
+                    their full potential, ultimately contributing to healthier, more educated communities.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <a href="tutoring.html">
                         <div class="facility-item">
                             <div class="facility-icon bg-primary">
                                 <img src="/img/mentorship.png" alt="mentorship" style="z-index: 999;"/>
-                                <!-- <i class="bi bi-lightning fa-3x text-primary"></i> -->
                             </div>
                             
                             <div class="facility-text">
@@ -165,8 +180,10 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <a href="afterschool.html">
                         <div class="facility-item">
                             <div class="facility-icon bg-primary">
                                 <img src="/img/back-to-school.png" alt="mentorship" style="z-index: 999;"/>
@@ -177,10 +194,12 @@
                                     Creating safe and engaging environments for children to learn and grow outside of regular school hours,
                                     focusing on both academic and personal development.
                                 </p>
-                         </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a href="infrastructure.html">
                         <div class="facility-item">
                             <div class="facility-icon bg-primary">
                                 <img src="/img/construction.png" alt="mentorship" style="z-index: 999;"/>
@@ -193,10 +212,12 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <a href="scholorship.html">
                         <div class="facility-item">
                             <div class="facility-icon bg-primary">
                                 <img src="/img/scholarship.png" alt="mentorship" style="z-index: 999;"/>
@@ -209,8 +230,10 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <a href="community.html">
                         <div class="facility-item">
                             <div class="facility-icon bg-primary">
                                 <img src="/img/handshake.png" alt="mentorship" style="z-index: 999;"/>
@@ -221,58 +244,63 @@
                                     Involving families and communities in educational initiatives to 
                                     foster a supportive atmosphere for children's learning.
                                 </p>
-                         </div>
                         </div>
-                    </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
-        <!-- Facilities End -->
+    </div>
+<!-- Facilities End -->
 
-      <!-- Footer Start -->
-      <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-3">
-            <div class="row g-5">
-                <div class="col-lg-6">
-                    <!-- <h3 class="text-white mb-4">Get In Touch</h3> -->
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Surkhet, Nepal</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                    <div class="d-flex pt-2 gap-3">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    </div>
+ <!-- Footer Start -->
+ <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-3">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div>
+                    <img src="img/logo.png" alt="logo" height="50"/>
                 </div>
-                <div class="col-lg-6">
-                    <div>
-                        <img src="img/footer_image_.png" alt="logo" height="50"/>
-                    </div>
-                    <div class="mt-3">
-                        <a class="btn btn-link text-white-50" href="">About Us</a>
-                        <a class="btn btn-link text-white-50" href="">Contact Us</a>
-                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
-                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
-                    </div>
+                <!-- <div class="mt-3">
+                    <a class="btn btn-link text-white-50" href="">About Us</a>
+                    <a class="btn btn-link text-white-50" href="">Contact Us</a>
+                    <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                    <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                </div> -->
+            </div>
+            <div class="col-lg-6">
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Surkhet, Nepal</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@raisinghandsfoundation.org</p>
+                <div class="d-flex pt-2 gap-3">
+                    <a 
+                        class="btn btn-outline-light btn-social" 
+                        href="https://www.facebook.com/share/K5q1YPWjXCrRW7m8/?mibextid=LQQJ4d" 
+                        target="_blank"
+                    >
+                        <i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="copyright pt-3 pb-3">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Helping Hnads, Nepal</a>. All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <div class="footer-menu">
-                            <a href="">Cookies</a>
-                            | <a href="">Help</a>
-                            | <a href="">FQAs</a>
-                        </div>
+    </div>
+    <div class="container">
+        <div class="copyright pt-3 pb-3">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0" style="font-size: 12px;">
+                    © Raising Hands Foundation, Nepal</a>. All Right Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-menu" style="font-size: 12px;">
+                        <a href="">Cookies</a>
+                        | <a href="">Help</a>
+                        | <a href="">FQAs</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Footer End -->
+</div>
+<!-- Footer End -->
 
 
         <!-- Back to Top -->

@@ -29,30 +29,49 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lc_PVUqAAAAAH3cT5zRYTWwL6YLLZnDQy7Q6Gm3"></script>      
+        
 </head>
 
 <body>
     <div class="container-xxl bg-white p-0">
-          <!-- Navbar Start -->
-          <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
-            <a href="index.html" class="navbar-brand">
-                <h4 class="m-0 text-primary">
-                    <img src="img/logo1.png" alt="logo" height="50"/>
-                </h4>
-            </a>
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav mx-auto">
-                    <a href="about.html" class="nav-item nav-link">Our Work</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
-                    <a href="partners.html" class="nav-item nav-link">Our Partners</a>
+       <!-- Navbar Start -->
+       <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-2 px-lg-5 py-lg-0">
+        <a href="index.html" class="navbar-brand">
+            <h4 class="m-0 text-primary">
+                <img src="img/logo.png" alt="logo" height="50"/>
+            </h4>
+        </a>
+        <button 
+            type="button" 
+            class="navbar-toggler" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarCollapse"
+            style="border:none; color: white;"
+        >
+            <span class="navbar-toggler-icon" style="color: red;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto">
+                <a href="about.html" class="nav-item nav-link">Our Work</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">What We Do</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
+                        <a href="tutoring.html" class="dropdown-item">Tutoring and Mentorship</a>
+                        <a href="afterschool.html" class="dropdown-item">After-School Programs</a>
+                        <a href="infrastructure.html" class="dropdown-item">Infrastructure Improvement</a>
+                        <a href="scholorship.html" class="dropdown-item">Scholarships and Financial Aid </a>
+                        <a href="community.html" class="dropdown-item">Community Engagement</a>
+                    </div>
                 </div>
-                <a href="donate.html" class="btn btn-primary px-3">Join Hands<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                <a href="partners.html" class="nav-item nav-link">Our Partners</a>
             </div>
-        </nav>
-        <!-- Navbar End -->
+            <a href="donate.html" class="btn btn-primary px-3">Join Hands<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
 
 
         <!-- Page Header End -->
@@ -77,7 +96,7 @@
                     <div class="row g-0">
                         <div class="col-lg-6" style="min-height: 400px;">
                             <div class="position-relative h-100">
-                                <img class="position-absolute w-100 h-100 rounded" src="img/children_donation.png" style="object-fit: cover;">
+                                <img class="position-absolute w-100 h-100 rounded" src="img/chilren_society.png" style="object-fit: cover;">
                             </div>
                         </div>
                         <div class="col-lg-6 rounded" style="background-color: #e4fff8;">
@@ -87,28 +106,28 @@
                                     Remember, you're one click away from making an impact. 
                                     Share your details, and let's discuss how you can contribute!
                                 </h5>
-                                <form>
+                                <form class="needs-validation" novalidate>
                                     <div class="row g-3">
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" id="gname" placeholder="Gurdian Name">
+                                                <input type="text" class="form-control" id="gname" placeholder="Gurdian Name" required>
                                                 <label for="gname">Full Name</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" id="cname" placeholder="Child Name">
+                                                <input type="email" class="form-control" id="cname" placeholder="Child Name" required>
                                                 <label for="cname">Email</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                                <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px" required></textarea>
                                                 <label for="message">How you want to make a contribution?</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                            <button class="btn btn-primary w-100 py-3" type="submit" onclick="handleOnClick(event)">Submit</button>
                                         </div>
                                     </div>
                                 </form>
@@ -126,23 +145,21 @@
             <div class="container py-3">
                 <div class="row g-5">
                     <div class="col-lg-6">
-                        <!-- <h3 class="text-white mb-4">Get In Touch</h3> -->
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Surkhet, Nepal</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                        <div class="d-flex pt-2 gap-3">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <div>
+                            <img src="img/logo.png" alt="logo" height="50"/>
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div>
-                            <img src="img/footer_image_.png" alt="logo" height="50"/>
-                        </div>
-                        <div class="mt-3">
-                            <a class="btn btn-link text-white-50" href="">About Us</a>
-                            <a class="btn btn-link text-white-50" href="">Contact Us</a>
-                            <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
-                            <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Surkhet, Nepal</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@raisinghandsfoundation.org</p>
+                        <div class="d-flex pt-2 gap-3">
+                            <a 
+                                class="btn btn-outline-light btn-social" 
+                                href="https://www.facebook.com/share/K5q1YPWjXCrRW7m8/?mibextid=LQQJ4d" 
+                                target="_blank"
+                            >
+                                <i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
                 </div>
@@ -150,11 +167,11 @@
             <div class="container">
                 <div class="copyright pt-3 pb-3">
                     <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Helping Hnads, Nepal</a>. All Right Reserved.
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0" style="font-size: 12px;">
+                            © Raising Hands Foundation, Nepal</a>. All Right Reserved.
                         </div>
                         <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
+                            <div class="footer-menu" style="font-size: 12px;">
                                 <a href="">Cookies</a>
                                 | <a href="">Help</a>
                                 | <a href="">FQAs</a>
@@ -181,6 +198,36 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    
+    <script>
+        (function () {
+          'use strict'
+  
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.querySelectorAll('.needs-validation')
+  
+          // Loop over them and prevent submission
+          Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+              form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                  event.preventDefault()
+                  event.stopPropagation()
+                }
+  
+                form.classList.add('was-validated')
+              }, false)
+            })
+        })()
+
+        function handleOnClick(e) {
+            e.preventDefault();
+            grecaptcha.enterprise.ready(async () => {
+            const token = await grecaptcha.enterprise.execute('6Lc_PVUqAAAAAH3cT5zRYTWwL6YLLZnDQy7Q6Gm3', {action: 'LOGIN'});
+            });
+        }
+    </script>
+  
 </body>
 
 </html>

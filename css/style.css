@@ -13,6 +13,22 @@
     z-index: 99;
 }
 
+img.team-image {
+    margin-bottom: -75px;
+    z-index: 1; 
+    border: 10px solid #ffff;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+img.team-image:hover {
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+nav > ol.breadcrumb li a {
+    color: #00dea3;
+}
 
 /* Setting the stroke to green using rgb values (0, 128, 0) - 30, 117, 108*/
 
@@ -301,7 +317,7 @@ h6,
 }
 
 .page-header {
-    background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(../img/cover_1.jpeg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(../img/pageheader_cover.png) center center no-repeat;
     background-size: cover;
 }
 
@@ -363,6 +379,7 @@ h6,
     text-align: center;
     justify-content: center;
     flex-direction: column;
+    color: #74787c !important;
 }
 
 .facility-item .facility-text::before {
@@ -415,10 +432,9 @@ h6,
     margin-top: -10px;
 }
 
-
 /*** Team ***/
 .team-item .team-text {
-    position: absolute;
+    /* position: absolute;
     width: 250px;
     height: 250px;
     bottom: 0;
@@ -430,7 +446,8 @@ h6,
     background: #FFFFFF;
     border: 17px solid var(--light);
     border-radius: 250px;
-    transition: .5s;
+    transition: .5s; */
+    border: 1px solid red;
 }
 
 .team-item:hover .team-text {

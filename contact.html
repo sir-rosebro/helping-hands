@@ -34,8 +34,8 @@
 
 <body>
     <div class="container-xxl bg-white p-0">
-         <!-- Navbar Start -->
-         <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-2 px-lg-5 py-lg-0">
+          <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-2 px-lg-5 py-lg-0">
             <a href="index.html" class="navbar-brand">
                 <h4 class="m-0 text-primary">
                     <img src="img/logo.png" alt="logo" height="50"/>
@@ -52,7 +52,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
-                    <a href="about.html" class="nav-item nav-link">Our Work</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">What We Do</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
@@ -63,8 +62,15 @@
                             <a href="community.html" class="dropdown-item">Community Engagement</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link link active">Contact Us</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Who We Are</a>
+                        <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
+                            <a href="about.html" class="dropdown-item">About Raising Hands Foundation</a>
+                            <a href="team.html" class="dropdown-item">Our Team</a>
+                        </div>
+                    </div>
                     <a href="partners.html" class="nav-item nav-link">Our Partners</a>
+                    <a href="contact.html" class="nav-item nav-link active">Contact Us</a>
                 </div>
                 <a href="donate.html" class="btn btn-primary px-3">Join Hands<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
@@ -78,7 +84,7 @@
                 <h1 class="display-2 text-white animated slideInDown mb-4">Contact Us</h1>
                 <nav aria-label="breadcrumb animated slideInDown">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item text-white active" aria-current="page">Contact Us</li>
                     </ol>
                 </nav>
@@ -119,7 +125,7 @@
                         <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 75px; height: 75px;background-color: #e4fff8;">
                             <i class="fa fa-phone-alt fa-2x text-primary"></i>
                         </div>
-                        <h6> +61 451 953 131</h6>
+                        <h6> (+977) 985 805 1412</h6>
                     </div>
                 </div>
                 <div class="rounded" style="background-color: #e4fff8;">
@@ -132,24 +138,28 @@
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="name" placeholder="Your Name" required>
                                                 <label for="name">Your Name</label>
+                                                <div class="invalid-feedback">Please enter your name.</div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
                                                 <input type="email" class="form-control" id="email" placeholder="Your Email" required>
                                                 <label for="email">Your Email</label>
+                                                <div class="invalid-feedback">Please enter your valid email.</div>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="subject" placeholder="Subject" required>
                                                 <label for="subject">Subject</label>
+                                                <div class="invalid-feedback">Please enter your subject.</div>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-floating">
                                                 <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px" required></textarea>
                                                 <label for="message">Message</label>
+                                                <div class="invalid-feedback">Please enter your message.</div>
                                             </div>
                                         </div>
                                         <div class="col-12">
@@ -177,17 +187,22 @@
 
 
       <!-- Footer Start -->
-      <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+      <div class="container-fluid text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s" style="background-color: #00654a;">
         <div class="container py-3">
             <div class="row g-5">
-                <div class="col-lg-6">
+                <div class="col-lg-6" style="font-size: 14px;">
                     <div>
                         <img src="img/logo.png" alt="logo" height="50"/>
+                        <p class="mt-2 text-light" style="max-width: 400px;">
+                            Raising Hands Foundation is a non-profit organization established 
+                            in 2024, dedicated to providing access to quality education for underprivileged 
+                            children in Western Nepal.
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Surkhet, Nepal</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(+977) 985 805 1412</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@raisinghandsfoundation.org</p>
                     <div class="d-flex pt-2 gap-3">
                         <a 
@@ -208,9 +223,9 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu" style="font-size: 12px;">
-                            <a href="">Cookies</a>
-                            | <a href="">Help</a>
-                            | <a href="">FQAs</a>
+                            <a href="cookies.html" class="text-light">Cookies</a>
+                            | <a href="help.html" class="text-light">Help</a>
+                            | <a href="faqs.html" class="text-light">FQAs</a>
                         </div>
                     </div>
                 </div>

@@ -310,6 +310,10 @@ h6,
     transition: .5s;
 }
 
+.footer img[alt="logo"] {
+    filter: brightness(0) invert(1); /* Changes the logo to white */
+}
+
 .header-carousel .owl-nav .owl-prev:hover,
 .header-carousel .owl-nav .owl-next:hover {
     background: var(--primary);

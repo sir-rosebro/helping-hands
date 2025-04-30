@@ -1,0 +1,63 @@
+// gold api resulet paypal
+
+{
+    "id": "P-5HX73091Y4052274DNAGMA3Y",
+    "product_id": "PROD-8D521145EC079202E",
+    "name": "Gold Donation Plan",
+    "status": "ACTIVE",
+    "description": "Support with $5 monthly donation",
+    "usage_type": "LICENSED",
+    "create_time": "2025-04-26T11:15:59Z",
+    "links": [
+        {
+            "href": "https://api.sandbox.paypal.com/v1/billing/plans/P-5HX73091Y4052274DNAGMA3Y",
+            "rel": "self",
+            "method": "GET",
+            "encType": "application/json"
+        },
+        {
+            "href": "https://api.sandbox.paypal.com/v1/billing/plans/P-5HX73091Y4052274DNAGMA3Y",
+            "rel": "edit",
+            "method": "PATCH",
+            "encType": "application/json"
+        },
+        {
+            "href": "https://api.sandbox.paypal.com/v1/billing/plans/P-5HX73091Y4052274DNAGMA3Y/deactivate",
+            "rel": "self",
+            "method": "POST",
+            "encType": "application/json"
+        }
+    ]
+}
+
+// platinum api payload paypal
+
+{
+    "id": "P-5VR39881P1270035BNAGMBYY",
+    "product_id": "PROD-8D521145EC079202E",
+    "name": "Platinum Donation Plan",
+    "status": "ACTIVE",
+    "description": "Support with $15 monthly donation",
+    "usage_type": "LICENSED",
+    "create_time": "2025-04-26T11:17:55Z",
+    "links": [
+        {
+            "href": "https://api.sandbox.paypal.com/v1/billing/plans/P-5VR39881P1270035BNAGMBYY",
+            "rel": "self",
+            "method": "GET",
+            "encType": "application/json"
+        },
+        {
+            "href": "https://api.sandbox.paypal.com/v1/billing/plans/P-5VR39881P1270035BNAGMBYY",
+            "rel": "edit",
+            "method": "PATCH",
+            "encType": "application/json"
+        },
+        {
+            "href": "https://api.sandbox.paypal.com/v1/billing/plans/P-5VR39881P1270035BNAGMBYY/deactivate",
+            "rel": "self",
+            "method": "POST",
+            "encType": "application/json"
+        }
+    ]
+}

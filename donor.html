@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Click Me</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            flex-direction: column;
+        }
+
+        #redirecting-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 9999;
+            flex-direction: row; /* Row layout for checkmark and text */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .click-button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #1c9a78;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .click-button:hover {
+            background-color: #168964;
+        }
+
+        /* Circle */
+        .circle {
+            width: 120px;
+            height: 120px;
+            border: 12px solid #1c9a78;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Checkmark Path - Drawing effect */
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            stroke: #1c9a78;
+            fill: none;
+            stroke-width: 8; /* Increased stroke width for bolder check */
+            stroke-dasharray: 180;
+            stroke-dashoffset: 180;
+            animation: draw-check 2s ease forwards;
+        }
+
+        @keyframes draw-check {
+            0% {
+                stroke-dashoffset: 180;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* Message */
+        .message {
+            font-size: 30px; /* Increased font size */
+            font-weight: bold; /* Bolder text */
+            margin-left: 20px;
+            color: #1c9a78;
+            opacity: 1;
+            animation: show-message 1s forwards; /* Immediate display */
+        }
+
+        /* Redirecting after animation */
+        @keyframes show-message {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="main-content">
+    <h2>Click the Button</h2>
+    <button class="click-button" id="clickButton">Click Me</button>
+</div>
+
+<!-- Hidden overlay with circle and checkmark -->
+<div id="redirecting-overlay">
+    <div class="circle">
+        <!-- SVG Checkmark Path -->
+        <svg width="80" height="80" viewBox="0 0 80 80">
+            <path class="checkmark" d="M10 40 L30 60 L70 20"></path>
+        </svg>
+    </div>
+    <div class="message">
+        Thank you for your support! We appreciate your help.
+    </div>
+</div>
+
+<script>
+    const button = document.getElementById('clickButton');
+    const overlay = document.getElementById('redirecting-overlay');
+    const message = document.querySelector('.message');
+
+    button.addEventListener('click', function() {
+        // Show the overlay with circle and checkmark
+        overlay.style.display = 'flex';
+
+        // Show the message immediately
+        message.style.opacity = '1';
+
+        // After 1 second, trigger the drawing of the checkmark
+        setTimeout(function() {
+            document.querySelector('.checkmark').style.animation = 'draw-check 2s ease forwards';
+        }, 1000); // Delay before drawing the checkmark
+
+        // After 3 seconds (when the checkmark finishes), redirect to the URL
+        setTimeout(function() {
+            window.location.href = 'file:///Users/test/Downloads/raising-hands/donor.html'; // Replace with your desired URL
+        }, 3000); // Redirect after 3 seconds (after checkmark animation)
+    });
+</script>
+
+</body>
+</html>

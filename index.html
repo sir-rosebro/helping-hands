@@ -125,8 +125,13 @@
         </div>
         <!-- Carousel End -->
 
-        <div class="container-xxl py-5" style="background-color: #e4fff8;">
-            <div class="container about-us-container mt-5">
+        <div class="container-xxl py-5" style="background-color: #e4fff8; position: relative; overflow: hidden;">
+            <!-- Single SVG Wave Background -->
+            <svg class="wavy-background" viewBox="0 0 1440 320" preserveAspectRatio="none" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+                <path fill="#4CAF50" fill-opacity="0.3" d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,128C672,107,768,117,864,138.7C960,160,1056,192,1152,186.7C1248,181,1344,139,1392,117.3L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+            </svg>
+        
+            <div class="container about-us-container mt-5" style="position: relative; z-index: 1;">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6">
                         <h1 class="mb-4 heading text-primary">Learn More About Our Work And The Overall Impact</h1>
@@ -150,14 +155,14 @@
                             Warm regards,
                         </p>
                         <div class="align-items-center">
-                                <img class="rounded-circle flex-shrink-0" src="img/chetan.jpg" alt="" style="width: 70px; height: 70px;">
-                                <div class="d-flex align-items-center mt-3">
-                                    <div class="" style="font-family: Heebo;">
-                                        <h6 class="text-primary">Chetan Adhikari</h6>
-                                        <p style="font-size: 12px; margin: 0;">Director</p>
-                                        <p style="font-size: 12px; margin: 0">Raising Hands Foundation</p>
-                                    </div>
+                            <img class="rounded-circle flex-shrink-0" src="img/chetan.jpg" alt="" style="width: 70px; height: 70px;">
+                            <div class="d-flex align-items-center mt-3">
+                                <div class="" style="font-family: Heebo;">
+                                    <h6 class="text-primary">Chetan Adhikari</h6>
+                                    <p style="font-size: 12px; margin: 0;">Director</p>
+                                    <p style="font-size: 12px; margin: 0">Raising Hands Foundation</p>
                                 </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6 about-img">
@@ -310,8 +315,75 @@
                         accessing education in Nepal.
                     </p>
                 </div>
+           
+                <!-- <article>
+                    <section class="card">
+                      <div class="text-content">
+                        <p>
+                          31% percent of girls are engaged in child labour, 
+                          compared to 19% of boys. Access to education decreases when girls come from 
+                          low castes or disadvantaged ethnic groups.
+                      </p>
+                        <a href="https://www.raisinghandsfoundation.org">Join Now</a>
+                      </div>
+                      <div class="visual">
+                        <img src="./img/card_image_1.jpg" alt="Education Support" />
+                      </div>
+                    </section>
+                </article> -->
+
+
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="testimonial-item rounded p-5" style="background: linear-gradient(to top, #ffff, #1c9a78cc);">
+
+                <article>
+                    <section class="card">
+                      <div class="text-content">
+                        <p>
+                            Less than 10% of children from the lowest Dalit caste will complete their 
+                            schooling because they have to help their families with farming work, or
+                             have to walk long distances to attend classes.
+                      </p>
+                        <a href="donate.html">Join Now</a>
+                      </div>
+                      <div class="visual">
+                        <img src="./img/card_image_1.jpg" alt="Education Support" />
+                      </div>
+                    </section>
+                </article>
+
+                <article>
+                    <section class="card">
+                      <div class="text-content">
+                        <p>
+                            Between the ages of 11 and 16, there is a massive school dropout rate,
+                            with many children leaving education prematurely. There are
+                            more than 770,000 out-of-school children aged 5 to 18.
+                      </p>
+                        <a href="donate.html">Join Now</a>
+                      </div>
+                      <div class="visual">
+                        <img src="./img/card_image.png" alt="Education Support" />
+                      </div>
+                    </section>
+                </article>
+
+
+                <article>
+                    <section class="card">
+                      <div class="text-content">
+                        <p>
+                          31% percent of girls are engaged in child labour, 
+                          compared to 19% of boys. Access to education decreases when girls come from 
+                          low castes or disadvantaged ethnic groups.
+                      </p>
+                        <a href="donate.html">Join Now</a>
+                      </div>
+                      <div class="visual">
+                        <img src="./img/card_image_3.png" alt="Education Support" />
+                      </div>
+                    </section>
+                </article>
+                    <!-- <div class="testimonial-item rounded p-5" style="background: linear-gradient(to top, #ffff, #1c9a78cc);">
                         <p class="fs-6">
                             Between the ages of 11 and 16, there is a massive school dropout rate,
                              with many children leaving education prematurely. There are
@@ -331,7 +403,7 @@
                             schooling because they have to help their families with farming work, or
                              have to walk long distances to attend classes.
                         </p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -340,39 +412,71 @@
       
 
         <!-- Footer Start -->
-        <div class="container-fluid text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s" style="background-color: #00654a;">
-            <div class="container py-3">
-                <div class="row g-5">
-                    <div class="col-lg-6" style="font-size: 14px;">
+        <div class="container-fluid text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s" style="background-color: #00654a; position: relative; overflow: hidden;">
+            <!-- SVG Wave Background -->
+            <svg class="wavy-background" viewBox="0 0 1440 320" preserveAspectRatio="none" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+                <path fill="#4CAF50" fill-opacity="0.3" d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,128C672,107,768,117,864,138.7C960,160,1056,192,1152,186.7C1248,181,1344,139,1392,117.3L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+                <path fill="#00654a" fill-opacity="0.5" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,165.3C960,149,1056,139,1152,149.3C1248,160,1344,192,1392,208L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+            </svg>
+        
+            <div class="container py-5" style="position: relative; z-index: 1;">
+                <div class="row g-5 align-items-start">
+                    <!-- Left Column -->
+                    <div class="col-lg-6">
                         <div>
-                            <img src="img/logo.png" alt="logo" height="50"/>
-                            <p class="mt-2 text-light" style="max-width: 400px;">
+                            <img src="img/logo.png" alt="logo" height="50" class="mb-3" />
+                            <p class="text-light" style="max-width: 400px; font-size: 14px;">
                                 Raising Hands Foundation is a non-profit organization established 
                                 in 2024, dedicated to providing access to quality education for underprivileged 
                                 children in Western Nepal.
                             </p>
+                            <!-- Brochure Link -->
+                            <div class="mt-4" style="font-size: 12px;">
+                                Raising Hands Foundation's <a href="path/to/your/brochure.pdf" class="text-light" style="font-size: 14px; text-decoration: underline;" target="_blank">brochure</a> is available for more information.
+                            </div>
+        
+                            <div class="d-flex pt-2 gap-3">
+                                <a 
+                                    class="btn btn-outline-light btn-social" 
+                                    href="https://www.facebook.com/share/K5q1YPWjXCrRW7m8/?mibextid=LQQJ4d" 
+                                    target="_blank"
+                                >
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
+        
+                    <!-- Right Column -->
                     <div class="col-lg-6">
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Surkhet, Nepal</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(+977) 985 805 1412</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@raisinghandsfoundation.org</p>
-                        <div class="d-flex pt-2 gap-3">
-                            <a 
-                                class="btn btn-outline-light btn-social" 
-                                href="https://www.facebook.com/share/K5q1YPWjXCrRW7m8/?mibextid=LQQJ4d" 
-                                target="_blank"
-                            >
-                                <i class="fab fa-facebook-f"></i></a>
+                        <div class="text-light" style="font-size: 14px;">
+                            <p><i class="fa fa-map-marker-alt me-2"></i>Surkhet, Nepal</p>
+                            <p><i class="fa fa-phone-alt me-2"></i>(+977) 985 805 1412</p>
+                            <p><i class="fa fa-envelope me-2"></i>info@raisinghandsfoundation.org</p>
+                        </div>
+        
+                        <div class="text-light p-3 mt-4 rounded" style="font-size: 13px; max-width: 320px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); background-color: #1c7d4c;">
+                            <div class="d-flex align-items-center mb-1">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Emblem_of_Nepal_%28alternative%29.svg" alt="Nepal Government Logo" style="height: 60px; margin-right: 8px;">
+                                <div class="ml-1">
+                                    <p class="mb-1" style="line-height: 1.5;">
+                                        <small style="font-style: italic; margin-right: 3px;">Registered with</small> 
+                                        <b>Office of the Company Registrar</b>
+                                    </p>
+                                    <p class="mb-1">Reg. No: 123456/078/079</p>
+                                </div>
+                            </div>
+                            <p class="ngo-para">Identified as Profit Non-Distributing Company</p>
                         </div>
                     </div>
                 </div>
             </div>
+        
             <div class="container">
                 <div class="copyright pt-3 pb-3">
                     <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0" style="font-size: 12px;">
-                            © Raising Hands Foundation, Nepal</a>. All Right Reserved.
+                        <div class="col-12 text-center" style="font-size: 12px;">
+                            © Raising Hands Foundation, Nepal. All Rights Reserved.
                         </div>
                     </div>
                 </div>

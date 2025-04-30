@@ -14,7 +14,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family= Lobster+Two:wght@700&display=swap" rel="stylesheet">
     
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -77,7 +77,6 @@
         </nav>
         <!-- Navbar End -->
 
-
         <!-- Page Header End -->
         <div class="container-xxl py-5 page-header position-relative mb-5">
             <div class="container py-5">
@@ -91,7 +90,6 @@
             </div>
         </div>
         <!-- Page Header End -->
-
 
         <!-- Contact Start -->
         <div class="container-xxl py-5">
@@ -175,8 +173,6 @@
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.416482238751!2d81.6347!3d28.5983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39bd7e5e679cf609%3A0x23b55ad497ef5e01!2sSurkhet%2C%20Nepal!5e0!3m2!1sen!2snp!4v1695991530113!5m2!1sen!2snp&z=20&q=Surkhet,+Nepal"
                                 frameborder="0" style="min-height: 400px; border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
                             </iframe>
-                            
-
                             </div>
                         </div>
                     </div>
@@ -184,7 +180,6 @@
             </div>
         </div>
         <!-- Contact End -->
-
 
       <!-- Footer Start -->
       <div class="container-fluid text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s" style="background-color: #00654a;">
@@ -227,7 +222,6 @@
     </div>
     <!-- Footer End -->
 
-
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
@@ -246,31 +240,66 @@
     <script>
         (function () {
           'use strict'
-  
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.querySelectorAll('.needs-validation')
-  
-          // Loop over them and prevent submission
-          Array.prototype.slice.call(forms)
-            .forEach(function (form) {
-              form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                  event.preventDefault()
-                  event.stopPropagation()
-                }
-  
-                form.classList.add('was-validated')
-              }, false)
-            })
-        })()
 
-        
-        // function handleOnClick(e) {
-        //     e.preventDefault();
-        //     grecaptcha.enterprise.ready(async () => {
-        //     const token = await grecaptcha.enterprise.execute('6Lc_PVUqAAAAAH3cT5zRYTWwL6YLLZnDQy7Q6Gm3', {action: 'LOGIN'});
-        //     });
-        // }
+          // Bootstrap form validation
+          var forms = document.querySelectorAll('.needs-validation')
+          Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+              form.classList.add('was-validated')
+            }, false)
+          })
+        })();
+
+        function handleOnClick(e) {
+          e.preventDefault();
+          var form = e.target.form;
+          if (!form.checkValidity()) {
+            form.classList.add('was-validated');
+            return;
+          }
+
+          grecaptcha.enterprise.ready(async () => {
+            try {
+              // Get reCAPTCHA token
+              const token = await grecaptcha.enterprise.execute('6Lc_PVUqAAAAAH3cT5zRYTWwL6YLLZnDQy7Q6Gm3', { action: 'SUBMIT' });
+
+              // Collect form data
+              var formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                recaptchaToken: token
+              };
+
+              // Send data to Google Apps Script
+              fetch('https://script.google.com/macros/s/AKfycbw07QrqzLEAgCTaKW8tG7QQY3u72oCTCtgby4Ioyr5s58kuC0rP-H6KJgtamMEb0X9T/exec', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+              })
+                .then(response => response.json())
+                .then(data => {
+                  if (data.status === 'success') {
+                    alert('Thank you! Your message has been sent, and a document has been created.');
+                    form.reset();
+                    form.classList.remove('was-validated');
+                  } else {
+                    alert('Error: ' + data.message);
+                  }
+                })
+                .catch(error => {
+                  alert('Error submitting form: ' + error.message);
+                });
+            } catch (error) {
+              alert('Error with reCAPTCHA: ' + error.message);
+            }
+          });
+        }
     </script>
 </body>
 

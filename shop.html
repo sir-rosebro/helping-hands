@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Rising Hands Foundation | Shop</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lc_PVUqAAAAAH3cT5zRYTWwL6YLLZnDQy7Q6Gm3"></script>  
+
+    <!-- React and ReactDOM -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+
+
+    .product-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .product-card .card-body {
+      padding: 20px;
+    }
+
+    .product-card h5 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .price-tag {
+      font-size: 20px;
+      font-weight: bold;
+      /* color: #ff6f61; */
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 30px;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .support-banner {
+      /* background-color: #1c9a78; */
+      background: linear-gradient(to bottom, #1c9a78 0%, #1c9a78 70%, #ffffff 100%);
+      color: #fff;
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 16px;
+      /* font-family: Arial, sans-serif; */
+      position: relative;
+    }
+
+    .support-banner a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .hero-section {
+      color: #fff;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+  .ribbon {
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    z-index: 1;
+    overflow: hidden;
+    width: 120px;
+    height: 120px;
+  }
+
+  .ribbon span {
+    position: absolute;
+    display: block;
+    width: 200px;
+    padding: 10px 0;
+    background: #1c9a78;
+    color: white;
+    font: bold 12px sans-serif;
+    text-align: center;
+    transform: rotate(-45deg);
+    top: 25px;
+    left: -45px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  </style>
+</head>
+<body>
+      <div class="support-banner">
+        📣 With every item you buy, 4% goes towards funding education for children in Nepal. <a href="shop.html" style="color: #fff">SHOP NOW!</a>
+      </div>
+       <!-- Navbar Start -->
+       <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-2 px-lg-5 py-lg-0">
+        <a href="index.html" class="navbar-brand">
+            <h4 class="m-0 text-primary">
+                <img src="img/logo.png" alt="logo" height="50"/>
+            </h4>
+        </a>
+        <button 
+            type="button" 
+            class="navbar-toggler" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarCollapse"
+            style="border:none; color: white;"
+        >
+            <span class="navbar-toggler-icon" style="color: red;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto">
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">What We Do</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
+                        <a href="scholorship.html" class="dropdown-item">Scholarships and Financial Aid </a>
+                        <a href="community.html" class="dropdown-item">Community Engagement</a>
+                        <a href="infrastructure.html" class="dropdown-item">Infrastructure Improvement</a>
+                        <a href="tutoring.html" class="dropdown-item">Tutoring and Mentorship</a>
+                        <a href="afterschool.html" class="dropdown-item">After-School Programs</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Who We Are</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
+                        <a href="about.html" class="dropdown-item">About Raising Hands Foundation</a>
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                    </div>
+                </div>
+                <a href="partners.html" class="nav-item nav-link">Our Partners</a>
+                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+            </div>
+            <a href="donate.html" class="btn btn-primary px-3">Join Hands<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Page Header End -->
+    <div class="container-xxl py-5 page-header position-relative mb-5">
+      <section class="hero-section">
+        <h1 style="color: #fff;">Support Education by Shopping</h1>
+        <p>Purchase school supplies and contribute to a child's education in Nepal!</p>
+      </section>
+    </div>
+    <!-- Page Header End -->
+
+  <!-- Content Section -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" id="product-grid">
+        <!-- React Products will load here -->
+        Loading products...
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+     <!-- Footer Start -->
+     <div class="container-fluid text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s" style="background-color: #00654a;">
+        <div class="container py-3">
+            <div class="row g-5">
+                <div class="col-lg-6" style="font-size: 14px;">
+                    <div>
+                        <img src="img/logo.png" alt="logo" height="50"/>
+                        <p class="mt-2 text-light" style="max-width: 400px;">
+                            Raising Hands Foundation is a non-profit organization established 
+                            in 2024, dedicated to providing access to quality education for underprivileged 
+                            children in Western Nepal.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Surkhet, Nepal</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(+977) 985 805 1412</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@raisinghandsfoundation.org</p>
+                    <div class="d-flex pt-2 gap-3">
+                        <a 
+                            class="btn btn-outline-light btn-social" 
+                            href="https://www.facebook.com/share/K5q1YPWjXCrRW7m8/?mibextid=LQQJ4d" 
+                            target="_blank"
+                        >
+                            <i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright pt-3 pb-3">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0" style="font-size: 12px;">
+                        © Raising Hands Foundation, Nepal</a>. All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+  </footer>
+
+  <!-- Modal for Pop-up -->
+  <div class="modal" tabindex="-1" id="storeModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Buy Now</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="storeMessage"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- React and ReactDOM script tags -->
+  <script type="text/babel">
+  const products = [
+    {
+        name: "Classic Notebook",
+        price: "रु 8.99",
+        description: "A high-quality, spiral-bound notebook perfect for daily notes.",
+        image: "https://images.squarespace-cdn.com/content/v1/5005c8fc84ae929b37214ebd/1510518919250-LB3J1EPQC4S6YNGLDIL7/4F7AFE4F-BE08-4EEB-A804-177EDCF05988.JPG?format=2500w"
+    },
+    {
+        name: "Eco-Friendly Pen",
+        price: "रु 2.49",
+        description: "Smooth writing ballpoint pen made from recycled materials.",
+        image: "https://m.media-amazon.com/images/I/819Unc1o9yL._AC_SX522_.jpg"
+    },
+    {
+        name: "Wooden Pencil Set",
+        price: "रु 5.99",
+        description: "Pack of 12 premium graphite pencils with erasers.",
+        image: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTMyPV2r4bF0EYwMv5RqrMySeIaS_pDoq3fR3VhoESvqB7EuoH4_i01QpENP0Z0DO673007Mm6nKebtrAPn84DDKxIsSU7Rpatovg0AJnAXVCGetQDoBxiERjQ"
+    },
+    {
+        name: "Color Marker Pack",
+        price: "रु 7.49",
+        description: "Set of 10 vibrant color markers for art and school projects.",
+        image: "https://img.kwcdn.com/product/fancy/df23ebbf-cc26-4b8c-a07e-6e46354608d4.jpg?imageView2/2/w/800/q/70/format/webp"
+    },
+    {
+        name: "Sticky Notes",
+        price: "रु 3.29",
+        description: "Bright sticky notes in various colors for reminders and notes.",
+        image: "https://img.kwcdn.com/product/open/60ad2f1242fd4734ae4f9b0c62f873be-goods.jpeg?imageView2/2/w/800/q/70/format/webp"
+    },
+    {
+        name: "Desk Organizer",
+        price: "रु 12.99",
+        description: "Stylish desk organizer to keep your stationery neatly arranged.",
+        image: "https://img.kwcdn.com/product/fancy/a047f7a0-14eb-4079-b0c5-e48d6238ce9c.jpg?imageView2/2/w/800/q/70/format/webp"
+    },
+    {
+        name: "Highlighter Set",
+        price: "रु 6.49",
+        description: "Pack of 6 pastel color highlighters, perfect for studying.",
+        image: "https://img.kwcdn.com/product/fancy/2ead040f-1519-4dff-896e-22be81e7bf3b.jpg?imageView2/2/w/800/q/70/format/webp"
+    }
+];
+
+
+    // Sample data for stores and products
+    const stores = [
+      { id: 1, name: "Store 1", lat: -33.8688, lon: 151.2093 },
+      { id: 2, name: "Store 2", lat: -33.9238, lon: 151.2553 },
+      { id: 3, name: "Store 3", lat: -33.8698, lon: 151.2123 }
+    ];
+
+    // Function to calculate the distance between two coordinates
+    const getDistance = (lat1, lon1, lat2, lon2) => {
+      const R = 6371; // Radius of the Earth in kilometers§
+      const dLat = (lat2 - lat1) * Math.PI / 180;
+      const dLon = (lon2 - lon1) * Math.PI / 180;
+      const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      const distance = R * c; // Distance in kilometers
+      return distance;
+    };
+
+    // Function to find the nearest store based on user location
+    const getNearestStore = (lat, lon) => {
+      let nearestStore = null;
+      let minDistance = Infinity;
+
+      stores.forEach(store => {
+        const distance = getDistance(lat, lon, store.lat, store.lon);
+        if (distance < minDistance) {
+          minDistance = distance;
+          nearestStore = store;
+        }
+      });
+
+      return nearestStore;
+    };
+
+    // Product card component
+    function ProductCard({ product, nearestStore }) {
+      const handleBuyNow = () => {
+        const storeMessage = `The nearest store is ${nearestStore.name}. Visit them to purchase the product!`;
+        document.getElementById('storeMessage').textContent = storeMessage;
+        new bootstrap.Modal(document.getElementById('storeModal')).show();
+      };
+
+      return (
+        <div className=" card product-card position-relative">
+        
+          <div class="ribbon"><span>🤝 $1 to charity</span></div>
+          <img src={product.image} alt={product.name} />
+          <div className="card-body">
+            <h5>{product.name}</h5>
+            <p>{product.description}</p>
+            <div className="d-flex justify-content-between align-items-center">
+              <span className="price-tag">{product.price}</span>
+              <button className="btn btn-primary" onClick={handleBuyNow}>Buy Now</button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // Product grid component
+    function ProductGrid({ products, nearestStore }) {
+      return (
+        <div className="product-grid">
+          {products.map((product, index) => (
+            <ProductCard key={index} product={product} nearestStore={nearestStore} />
+          ))}
+        </div>
+      );
+    }
+
+    // Handle geolocation success
+    const handleLocationSuccess = (position) => {
+      const userLat = position.coords.latitude;
+      const userLon = position.coords.longitude;
+
+      // Find the nearest store and display its products
+      const nearestStore = getNearestStore(userLat, userLon);
+
+      if (nearestStore) {
+        ReactDOM.render(<ProductGrid products={products} nearestStore={nearestStore} />, document.getElementById('product-grid'));
+      } else {
+        document.getElementById('product-grid').innerHTML = 'No stores found nearby.';
+      }
+    };
+
+    // Handle geolocation error
+    const handleLocationError = (error) => {
+      console.error("Error getting user location: ", error);
+      document.getElementById('product-grid').innerHTML = 'Could not retrieve your location. Please try again.';
+    };
+
+    // Request user location and load nearest store products
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(handleLocationSuccess, handleLocationError);
+    } else {
+      document.getElementById('product-grid').innerHTML = 'Geolocation is not supported by this browser.';
+    }
+
+  </script>
+
+  <!-- Bootstrap JS for modal functionality -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

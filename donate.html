@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Rising Hands Foundation | Join Hands</title>
+    <title>Rising Hands Foundation | Subscription </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -29,15 +29,305 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lc_PVUqAAAAAH3cT5zRYTWwL6YLLZnDQy7Q6Gm3"></script>  
 
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lc_PVUqAAAAAH3cT5zRYTWwL6YLLZnDQy7Q6Gm3"></script>      
-        
+    <!-- React and ReactDOM -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      .support-banner {
+      /* background-color: #1c9a78; */
+      background: linear-gradient(to bottom, #1c9a78 0%, #1c9a78 70%, #ffffff 100%);
+      color: #fff;
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 16px;
+      /* font-family: Arial, sans-serif; */
+      position: relative;
+    }
+
+    .support-banner a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+
+        .donor-page {
+            text-align: center;
+            padding: 50px 20px;
+            background-image: url(./img/pageheader_cover.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            /* background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(./img/pageheader_cover.png) center center no-repeat; */
+            color: white;
+        }
+
+        .donor-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .donor-header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .donor-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .donor-card {
+            background: white;
+            color: #333;
+            border-radius: 12px;
+            padding: 30px 20px;
+            width: 280px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .donor-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .donor-card h2 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .donor-card p > strong {
+            font-size: 1.5rem;
+        }
+
+        .donor-card p {
+            margin: 10px 0;
+        }
+
+        .gold {
+            border-top: 1rem solid #FFD700;
+        }
+
+        .gold h2 {
+            color: #ffd700;
+        }
+
+        .gold .donate-btn {
+            background-color: #ffd700;
+        }
+
+        .platinum {
+            border-top: 1rem solid #e5e4e2;
+        }
+
+        .platinum  h2 {
+            color: #cbcac8;
+        }
+
+        .platinum .donate-btn {
+            background-color: #aaaaa9;
+        }
+
+        .one-time {
+            border-top: 1rem solid #10a6c9;
+        }
+
+        .one-time .donate-btn {
+            background-color: #10a6c9;
+        }
+
+        .one-time  h2 {
+            color: #10a6c9;
+        }
+
+        .donate-btn {
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+
+        .donate-btn:disabled {
+            background-color: #c3c3c3;
+            cursor: not-allowed;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .icon-success {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Success Message Styles */
+        .payment-success-message {
+            color: green;
+            font-size: 1.2rem;
+            display: none;
+        }
+
+        /* Spinner Styles */
+        .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #1c9a78;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #redirecting-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Dark background with opacity */
+            backdrop-filter: blur(10px) contrast(150%); /* Blur the background and increase contrast */
+            z-index: 9999;
+            flex-direction: row; /* Row layout for checkmark and text */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .click-button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #1c9a78;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .click-button:hover {
+            background-color: #168964;
+        }
+
+        /* Circle */
+        .circle {
+            width: 120px;
+            height: 120px;
+            border: 12px solid #1c9a78; /* Green border for the circle */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1c9a78; /* Green circle background */
+            position: relative;
+        }
+
+        /* Checkmark Path - Drawing effect */
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            stroke: white; /* White checkmark color */
+            fill: none;
+            stroke-width: 8; /* Increased stroke width for bolder check */
+            stroke-dasharray: 180;
+            stroke-dashoffset: 180;
+            animation: draw-check 2s ease forwards;
+        }
+
+        @keyframes draw-check {
+            0% {
+                stroke-dashoffset: 180;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* Message */
+        .message {
+            font-size: 30px; /* Increased font size */
+            font-weight: bold; /* Bolder text */
+            margin-left: 20px;
+            color: white; /* Bright green color for text */
+            opacity: 1;
+            animation: show-message 1s forwards; /* Immediate display */
+            z-index: 10000; /* Ensure the message is above the blurred background */
+        }
+
+        /* Redirecting after animation */
+        @keyframes show-message {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
-    <div class="container-xxl bg-white p-0">
-      <!-- Navbar Start -->
-      <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-2 px-lg-5 py-lg-0">
+    <div class="support-banner">
+        📣 With every item you buy, 4% goes towards funding education for children in Nepal. <a href="shop.html" style="color: #fff">SHOP NOW!</a>
+      </div>
+       <!-- Navbar Start -->
+       <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-2 px-lg-5 py-lg-0">
         <a href="index.html" class="navbar-brand">
             <h4 class="m-0 text-primary">
                 <img src="img/logo.png" alt="logo" height="50"/>
@@ -74,168 +364,252 @@
                 <a href="partners.html" class="nav-item nav-link">Our Partners</a>
                 <a href="contact.html" class="nav-item nav-link">Contact Us</a>
             </div>
-            <a href="donate.html" class="btn btn-primary px-3">Join Hands<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
 
-
-        <!-- Page Header End -->
-        <div class="container-xxl py-5 page-header position-relative mb-5">
-            <div class="container py-5">
-                <h1 class="display-2 text-white animated slideInDown mb-4">Join Hands</h1>
-                <nav aria-label="breadcrumb animated slideInDown">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item text-white active" aria-current="page">Join Hands</li>
-                    </ol>
-                </nav>
-            </div>
+    <!-- Hidden overlay with circle and checkmark -->
+    <div id="redirecting-overlay">
+        <div class="circle">
+            <!-- SVG Checkmark Path -->
+            <svg width="80" height="80" viewBox="0 0 80 80">
+                <path class="checkmark" d="M10 40 L30 60 L70 20"></path>
+            </svg>
         </div>
-        <!-- Page Header End -->
-
-
-        <!-- Appointment Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="rounded">
-                    <div class="row g-0">
-                        <div class="col-lg-6" style="min-height: 400px;">
-                            <div class="position-relative h-100">
-                                <img class="position-absolute w-100 h-100 rounded" src="img/join_hands.png" style="object-fit: cover;">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 rounded" style="background-color: #e4fff8;">
-                            <div class="h-100 d-flex flex-column justify-content-center p-5">
-                                <!-- <h1 class="mb-4">Raise your hand for change</h1> -->
-                                 <h5 class="mb-5">
-                                    Remember, you're one click away from making an impact. 
-                                    Share your details, and let's discuss how you can contribute!
-                                </h5>
-                                <form class="needs-validation" novalidate>
-                                    <div class="row g-3">
-                                        <div class="col-12">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control" id="gname" placeholder="Gurdian Name" required>
-                                                <label for="gname">Full Name</label>
-                                                <div class="invalid-feedback">Please enter your full name.</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-floating">
-                                                <input type="email" class="form-control" id="cname" placeholder="Child Name" required>
-                                                <label for="cname">Email</label>
-                                                <div class="invalid-feedback">Please enter your valid email.</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-floating">
-                                                <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px" required></textarea>
-                                                <label for="message">How you want to make a contribution?</label>
-                                                <div class="invalid-feedback">Please write how you want to contribute.</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3" type="submit" onclick="handleOnClick(event)">Submit</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="message">
+            Thank you for your support! We appreciate your help.
         </div>
-        <!-- Appointment End -->
-
-
-          <!-- Footer Start -->
-          <div class="container-fluid text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s" style="background-color: #00654a;">
-            <div class="container py-3">
-                <div class="row g-5">
-                    <div class="col-lg-6" style="font-size: 14px;">
-                        <div>
-                            <img src="img/logo.png" alt="logo" height="50"/>
-                            <p class="mt-2 text-light" style="max-width: 400px;">
-                                Raising Hands Foundation is a non-profit organization established 
-                                in 2024, dedicated to providing access to quality education for underprivileged 
-                                children in Western Nepal.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Surkhet, Nepal</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(+977) 985 805 1412</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@raisinghandsfoundation.org</p>
-                        <div class="d-flex pt-2 gap-3">
-                            <a 
-                                class="btn btn-outline-light btn-social" 
-                                href="https://www.facebook.com/share/K5q1YPWjXCrRW7m8/?mibextid=LQQJ4d" 
-                                target="_blank"
-                            >
-                                <i class="fab fa-facebook-f"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="copyright pt-3 pb-3">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0" style="font-size: 12px;">
-                            © Raising Hands Foundation, Nepal</a>. All Right Reserved.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    
+    <div class="donor-page">
+        <div class="donor-header">
+            <h1 class="text-white">Become a Donor</h1>
+            <p>Your contribution powers education for children in Nepal. Choose a plan and make a lasting impact!</p>
+        </div>
+
+        <div class="donor-options">
+            <div class="donor-card gold">
+                <h2>Gold Donor</h2>
+                <p><strong>$5/month</strong></p>
+                <p>Support education monthly and bring smiles to children's faces.</p>
+                <button class="donate-btn" onClick="openModal('Gold', 5)">Select Plan</button>
+            </div>
+
+            <div class="donor-card platinum">
+                <h2>Platinum Donor</h2>
+                <p><strong>$15/month</strong></p>
+                <p>Become a key supporter and empower more lives every month!</p>
+                <button class="donate-btn" onClick="openModal('Platinum', 15)">Select Plan</button>
+            </div>
+
+            <div class="donor-card one-time">
+                <h2>One-Time Donation</h2>
+                <p><strong>Any Amount</strong></p>
+                <p>Make a one-time contribution — every dollar counts!</p>
+                <button class="donate-btn" onClick="openModal('One-Time', 0)">Donate Now</button>
+            </div>
+        </div>
+    </div>
+
+<!-- Footer Start -->
+<div class="container-fluid text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s" style="background-color: #00654a; position: relative; overflow: hidden;">
+    <!-- SVG Wave Background -->
+    <svg class="wavy-background" viewBox="0 0 1440 320" preserveAspectRatio="none" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+        <path fill="#4CAF50" fill-opacity="0.3" d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,128C672,107,768,117,864,138.7C960,160,1056,192,1152,186.7C1248,181,1344,139,1392,117.3L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+        <path fill="#00654a" fill-opacity="0.5" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,165.3C960,149,1056,139,1152,149.3C1248,160,1344,192,1392,208L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+    </svg>
+
+    <div class="container py-5" style="position: relative; z-index: 1;">
+        <div class="row g-5 align-items-start">
+            <!-- Left Column -->
+            <div class="col-lg-6">
+                <div>
+                    <img src="img/logo.png" alt="logo" height="50" class="mb-3" />
+                    <p class="text-light" style="max-width: 400px; font-size: 14px;">
+                        Raising Hands Foundation is a non-profit organization established 
+                        in 2024, dedicated to providing access to quality education for underprivileged 
+                        children in Western Nepal.
+                    </p>
+                    <!-- Brochure Link -->
+                    <div class="mt-4" style="font-size: 12px;">
+                        Raising Hands Foundation's <a href="path/to/your/brochure.pdf" class="text-light" style="font-size: 14px; text-decoration: underline;" target="_blank">brochure</a> is available for more information.
+                    </div>
+
+                    <div class="d-flex pt-2 gap-3">
+                        <a 
+                            class="btn btn-outline-light btn-social" 
+                            href="https://www.facebook.com/share/K5q1YPWjXCrRW7m8/?mibextid=LQQJ4d" 
+                            target="_blank"
+                        >
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-lg-6">
+                <div class="text-light" style="font-size: 14px;">
+                    <p><i class="fa fa-map-marker-alt me-2"></i>Surkhet, Nepal</p>
+                    <p><i class="fa fa-phone-alt me-2"></i>(+977) 985 805 1412</p>
+                    <p><i class="fa fa-envelope me-2"></i>info@raisinghandsfoundation.org</p>
+                </div>
+
+                <div class="text-light p-3 mt-4 rounded" style="font-size: 13px; max-width: 320px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); background-color: #1c7d4c;">
+                    <div class="d-flex align-items-center mb-1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Emblem_of_Nepal_%28alternative%29.svg" alt="Nepal Government Logo" style="height: 60px; margin-right: 8px;">
+                        <div class="ml-1">
+                            <p class="mb-1" style="line-height: 1.5;">
+                                <small style="font-style: italic; margin-right: 3px;">Registered with</small> 
+                                <b>Office of the Company Registrar</b>
+                            </p>
+                            <p class="mb-1">Reg. No: 123456/078/079</p>
+                        </div>
+                    </div>
+                    <p class="ngo-para">Identified as Profit Non-Distributing Company</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="copyright pt-3 pb-3">
+            <div class="row">
+                <div class="col-12 text-center" style="font-size: 12px;">
+                    © Raising Hands Foundation, Nepal. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+
+
+
+
+    <!-- Modal -->
+    <div id="donorModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onClick="closeModal()">&times;</span>
+            <h2 class="text-center mb-4">Enter Your Information</h2>
+            <form id="donorForm" onSubmit="return false;">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" name="name"  />
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone"  pattern="^[0-9]{10}$" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" name="address"  />
+                </div>
+
+                <div id="paypal-button-container"></div>
+
+                <!-- Success Message -->
+                <div id="payment-success-message" class="payment-success-message text-center mt-3" style="display: none;">
+                    Payment Successful! Thank you for your contribution.
+                </div>
+
+                <!-- Spinner -->
+                <div id="spinner" class="text-center" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Processing...</p>
+                </div>
+
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary donate-btn" id="submitBtn" >Submit</button>
+                    <span id="check-icon" class="icon-success" style="display:none;">✓</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- React & PayPal SDK -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AclI_VI7ThPFf_ijk68X5MchQyg03RfoJASA7MRHu3KxpoPvEHykNdRL5AqH-DxtQbl96rBXwr7tRa8x&vault=true&intent=subscription&currency=AUD"></script>
+
     <script>
-        (function () {
-          'use strict'
-  
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.querySelectorAll('.needs-validation')
-  
-          // Loop over them and prevent submission
-          Array.prototype.slice.call(forms)
-            .forEach(function (form) {
-              form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                  event.preventDefault()
-                  event.stopPropagation()
-                }
-  
-                form.classList.add('was-validated')
-              }, false)
-            })
-        })()
-        
+        let selectedPlan = '';
+        let donationAmount = 0;
+        let paypalButtonRendered = false;
+        let paypalPaymentApproved = false;
+        const overlay = document.getElementById('redirecting-overlay');
+        const message = document.querySelector('.message');
 
-        // function handleOnClick(e) {
-        //     e.preventDefault();
-        //     grecaptcha.enterprise.ready(async () => {
-        //     const token = await grecaptcha.enterprise.execute('6Lc_PVUqAAAAAH3cT5zRYTWwL6YLLZnDQy7Q6Gm3', {action: 'LOGIN'});
-        //     });
-        // }
+        function openModal(plan, amount) {
+            selectedPlan = plan;
+            donationAmount = amount;
+            const modal = document.getElementById("donorModal");
+            modal.style.display = "block";
+
+            // Enable the submit button only when the form is valid and PayPal is approved
+            const submitButton = document.getElementById('submitBtn');
+            const form = document.getElementById("donorForm");
+
+            // form.addEventListener("input", function () {
+            //     const isValid = form.checkValidity() && paypalPaymentApproved;
+            //     submitButton.disabled = !isValid;
+            // });
+
+            if (donationAmount > 0 && !paypalButtonRendered) {
+                renderPayPalButton();
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("donorModal");
+            modal.style.display = "none";
+        }
+
+        function renderPayPalButton() {
+            paypal.Buttons({
+                createSubscription: function (data, actions) {
+                    return actions.subscription.create({
+                        plan_id: donationAmount === 5 ? 'P-5HX73091Y4052274DNAGMA3Y' : 'P-5VR39881P1270035BNAGMBYY',
+                    });
+                },
+                onApprove: function (data, actions) {
+                    paypalPaymentApproved = true;
+                    // Hide PayPal button and show success message
+                    document.getElementById('paypal-button-container').style.display = 'none';
+                    document.getElementById("payment-success-message").style.display = 'block';
+
+                    // Enable the submit button once payment is successful
+                    document.getElementById('submitBtn').style.display = 'inline-block';
+                    document.getElementById('submitBtn').disabled = false;
+                }
+            }).render('#paypal-button-container');
+            paypalButtonRendered = true;
+        }
+
+        // Submit the form and display success message and spinner
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.addEventListener('click', function () {
+            // Show the overlay with circle and checkmark
+            overlay.style.display = 'flex';
+
+        // Show the message immediately
+        message.style.opacity = '1';
+
+        // After 1 second, trigger the drawing of the checkmark
+        setTimeout(function() {
+            document.querySelector('.checkmark').style.animation = 'draw-check 2s ease forwards';
+        }, 1000); // Delay before drawing the checkmark
+
+        // After 3 seconds (when the checkmark finishes), redirect to the URL
+        setTimeout(function() {
+            window.location.href = '/partners.html#donors'; // Replace with your desired URL
+        }, 3000); // Redirect after 3 seconds (after checkmark animation)
+                });
     </script>
-  
 </body>
 
-</html>

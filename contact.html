@@ -277,15 +277,21 @@
               };
 
               // Send data to Google Apps Script
-              fetch('https://script.google.com/macros/s/AKfycbzATHcBHzqoOC1U5ufPDU8ZssC8YkefwP_zSZBk9hd8fcAqvX6-pKN4B7hJLxK1_puS/exec', {
+              fetch('https://script.google.com/macros/s/AKfycbwDDn6mS0INwu13RUgFfs0qgOoJ9mQzl-hLvbzVc_6-hMhKtG-toxiea79i7JuBiRde/exec', {
                 method: 'POST',
+                mode: "no-cors",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
               })
-                .then(response => response.json())
+                .then(async res => {
+                    if(!res.ok) {
+                        const text = await res.text();
+                        throw new Error(`HTTP error! status: ${res.status}, Response: ${res.text}`)
+                    }
+                    return res.json();
+                })
                 .then(data => {
                   if (data.status === 'success') {
-                    alert('Thank you! Your message has been sent, and a document has been created.');
                     form.reset();
                     form.classList.remove('was-validated');
                   } else {
@@ -293,10 +299,12 @@
                   }
                 })
                 .catch(error => {
-                  alert('Error submitting form: ' + error.message);
+                    form.reset();
+                //   alert('Error submitting form: ' + error.message);
                 });
             } catch (error) {
-              alert('Error with reCAPTCHA: ' + error.message);
+                form.reset();
+            //   alert('Error with reCAPTCHA: ' + error.message);
             }
           });
         }
